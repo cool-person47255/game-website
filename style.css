@@ -167,3 +167,61 @@ h1 { margin: 25px 0 20px; font: clamp(32px, 4.1vw, 57px)/1.17 var(--font-display
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* SPARK homepage refresh: put games near the top and give the featured card room. */
+.welcome-bar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 18px;
+}
+.welcome-bar h1 {
+  margin: 12px 0 0;
+  font-size: clamp(26px, 3.2vw, 40px);
+  letter-spacing: -1.8px;
+}
+.welcome-bar > p {
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.games-section { padding-top: 16px; }
+.section-heading { margin-bottom: 20px; }
+.section-heading h2 { font-size: clamp(23px, 2.8vw, 34px); }
+.arcade-toolbar { padding-top: 12px; }
+.split-game-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  grid-template-rows: repeat(2, minmax(0, auto));
+  align-items: stretch;
+  gap: 14px;
+}
+.split-game-grid .game-card-featured { grid-row: span 2; }
+.split-game-grid .game-card-featured .game-art { height: 300px; }
+.split-game-grid .game-card:not(.game-card-featured) { display: flex; flex-direction: column; }
+.split-game-grid .game-card:not(.game-card-featured) .game-art {
+  flex: 1; min-height: 115px; height: 130px;
+}
+.split-game-grid .game-card:not(.game-card-featured) .game-card-info { margin-top: auto; }
+.coming-soon { padding: 13px 16px; }
+.coming-soon p { display: none; }
+@media (min-width: 681px) {
+  .site-header { height: 68px; }
+  .main-nav { margin-right: 24px; }
+}
+@media (max-width: 900px) and (min-width: 681px) {
+  .split-game-grid .game-card-featured .game-art { height: 260px; }
+  .split-game-grid .game-card:not(.game-card-featured) .game-art { height: 105px; min-height: 95px; }
+  .status-pill { letter-spacing: 0; }
+}
+@media (max-width: 680px) {
+  .welcome-bar { align-items: start; flex-direction: column; gap: 7px; padding-top: 25px; padding-bottom: 8px; }
+  .welcome-bar h1 { font-size: clamp(25px, 7vw, 34px); }
+  .welcome-bar > p { font-size: 12px; }
+  .games-section { padding-top: 18px; }
+  .split-game-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; }
+  .split-game-grid .game-card-featured { grid-row: auto; }
+  .split-game-grid .game-card-featured .game-art { height: 205px; }
+  .split-game-grid .game-card:not(.game-card-featured) .game-art { height: 170px; }
+}

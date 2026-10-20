@@ -268,3 +268,54 @@ h1 { margin: 25px 0 20px; font: clamp(32px, 4.1vw, 57px)/1.17 var(--font-display
  .library-grid { grid-template-columns: 1fr; }
  .library-grid .game-card-featured .game-art, .library-grid .game-card:not(.game-card-featured) .game-art { height: 205px; }
 }
+
+
+/* Each SPARK destination gets its own layout, not just a new heading. */
+/* Arcade: compact, searchable library with the art taking center stage. */
+.arcade-page .page-heading { border: 0; padding-bottom: 10px; }
+.arcade-page .page-heading h1 { font-size: clamp(36px, 6vw, 70px); }
+.arcade-page .page-heading p { display: none; }
+.arcade-page .page-games { padding-top: 12px; }
+.arcade-page .section-heading { border-top: 1px solid var(--line); padding-top: 24px; }
+.arcade-page .library-grid { gap: 18px; }
+.arcade-page .library-grid .game-art { height: 230px !important; }
+.arcade-page .game-card { transition: transform .22s, border-color .22s; }
+.arcade-page .game-card:hover { transform: translateY(-4px); border-color: var(--lime); }
+.arcade-page .coming-soon { margin-top: 22px; }
+
+/* Guides: editorial layout with a strong lead story and numbered quick reads. */
+.guides-page .page-heading { border-bottom: 3px solid var(--lime); padding-bottom: 24px; }
+.guides-page .page-heading h1 { max-width: 850px; font-size: clamp(34px, 6vw, 68px); }
+.guides-page .page-heading p { font-size: 15px; }
+.guides-page .page-card-grid { grid-template-columns: 1.2fr 1fr; align-items: stretch; }
+.guides-page .page-feature-card { position: relative; padding: 25px; border: 0; border-top: 1px solid #42443a; background: transparent; }
+.guides-page .page-feature-card:first-child { grid-row: span 2; padding: 30px; background: var(--lime); color: var(--ink); }
+.guides-page .page-feature-card:first-child .eyebrow,
+.guides-page .page-feature-card:first-child p { color: #343a20; }
+.guides-page .page-feature-card:first-child .page-card-icon { background: var(--ink); color: var(--lime); }
+.guides-page .page-feature-card:first-child h2 { font-size: clamp(22px, 3vw, 32px); }
+.guides-page .page-feature-card:first-child .status-pill { color: var(--ink); border-color: #68752c; }
+.guides-page .page-feature-card:not(:first-child) .page-card-icon { float: left; margin: 0 18px 12px 0; background: var(--panel-light); color: var(--lime); border: 1px solid var(--line); }
+.guides-page .page-feature-card p { min-height: 0; }
+.guides-page .page-footnote { padding: 18px 20px; border-left: 3px solid var(--lime); background: var(--panel); }
+
+/* School Hub: dashboard-first, with a bold date banner and practical panels. */
+.school-page .page-heading { border: 0; padding-bottom: 18px; }
+.school-page .page-heading h1 { font-size: clamp(30px, 5vw, 55px); }
+.school-page .school-dashboard { grid-template-columns: 1.2fr 1fr 1fr; padding-top: 8px; gap: 12px; }
+.school-page .school-date-card { min-height: 215px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px; }
+.school-page .school-date-card strong { font-size: clamp(24px, 3.5vw, 42px); margin: 12px 0; }
+.school-page .school-info-card { min-height: 215px; border-top: 3px solid var(--lime); }
+.school-page .school-info-card:nth-child(3) { border-top-color: var(--purple); }
+.school-page .school-info-card:nth-child(3) strong { color: var(--purple); }
+.school-page .school-resources { margin-top: 26px; padding: 24px; background: var(--panel); border: 1px solid var(--line); }
+.school-page .school-resources .section-heading { margin-bottom: 18px; }
+.school-page .resource-placeholder { background: var(--ink); }
+.school-page .page-footnote { max-width: 720px; }
+@media (max-width: 760px) {
+ .guides-page .page-card-grid { grid-template-columns: 1fr; }
+ .guides-page .page-feature-card:first-child { grid-row: auto; }
+ .school-page .school-dashboard { grid-template-columns: 1fr; }
+ .school-page .school-date-card, .school-page .school-info-card { min-height: 0; }
+ .arcade-page .library-grid .game-art { height: 205px !important; }
+}

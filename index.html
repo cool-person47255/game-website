@@ -1,1 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111210">
+  <meta name="description" content="SPARK — your next favorite game is one click away.">
+  <title>SPARK — Play something good.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="SPARK home">
+      <img class="brand-mark" src="https://raw.githubusercontent.com/cool-person47255/game-website/main/Screenshot%202026-10-20%203.55.44%20PM.png" alt="">
+      <span>SPARK</span><span class="brand-period">.</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#games">Games</a>
+      <a class="nav-link" href="#guides">Guides</a>
+      <a class="nav-link" href="#school-hub">School hub</a>
+    </nav>
+    <a class="header-cta" href="#games">Find a game <span aria-hidden="true">↗</span></a>
+  </header>
 
+  <main id="main">
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> THE ARCADE IS TAKING SHAPE</div>
+        <h1>LESS SCROLLING.<br><span class="lime-text">MORE PLAYING.</span></h1>
+        <p class="hero-description">A little chaos. A lot of fun. Find your next favorite game, discover useful guides, and keep your school day organized — all in one place.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#games">Explore the arcade <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#school-hub">Check the school hub <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-footnote"><span class="tiny-spark" aria-hidden="true">✳</span> MADE FOR QUICK BREAKS AND BIG IDEAS</div>
+      </div>
+      <div class="hero-art" aria-label="SPARK logo artwork">
+        <div class="art-topline"><span>SPARK / 001</span><span>PLAY MODE: ON</span></div>
+        <div class="logo-stage">
+          <img src="https://raw.githubusercontent.com/cool-person47255/game-website/main/Screenshot%202026-10-20%203.55.44%20PM.png" alt="The SPARK acid-lime geometric lightning bolt logo">
+          <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+          <span class="art-cross cross-one">+</span><span class="art-cross cross-two">+</span>
+        </div>
+        <div class="art-bottomline"><span>FIND YOUR NEXT THING.</span><span class="art-index">01 — 04</span></div>
+        <div class="floating-tag tag-top">NO BORING STUFF <span>↗</span></div>
+        <div class="floating-tag tag-bottom"><span class="tag-dot"></span> YOUR NEXT CLICK COUNTS</div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="SPARK motto">
+      <div class="ticker-track"><span>PLAY CURIOUS</span><b>✳</b><span>STAY SHARP</span><b>✳</b><span>FIND YOUR THING</span><b>✳</b><span>PLAY CURIOUS</span><b>✳</b><span>STAY SHARP</span><b>✳</b><span>FIND YOUR THING</span><b>✳</b></div>
+    </section>
+
+    <section class="section-wrap games-section" id="games">
+      <div class="section-heading">
+        <div><div class="eyebrow">01 / THE ARCADE</div><h2>Pick your <span class="lime-text">next obsession.</span></h2></div>
+        <span class="section-note">THE GAME LIBRARY IS IN PROGRESS</span>
+      </div>
+      <div class="arcade-toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="game-search" type="search" placeholder="Search the arcade..." autocomplete="off" aria-label="Search games"></label>
+        <div class="category-filters" aria-label="Filter arcade cards">
+          <button class="filter-chip selected" data-filter="all" aria-pressed="true">Everything</button>
+          <button class="filter-chip" data-filter="quick" aria-pressed="false">Quick play</button>
+          <button class="filter-chip" data-filter="skill" aria-pressed="false">Skill</button>
+          <button class="filter-chip" data-filter="brain" aria-pressed="false">Brain</button>
+        </div>
+      </div>
+      <div class="game-grid" id="game-grid">
+        <article class="game-card game-card-featured" data-category="quick" data-search="quick play arcade fast mini games">
+          <div class="game-card-top"><span class="game-number">SP / 001</span><span class="status-pill"><span></span> IN THE WORKS</span></div>
+          <div class="game-art art-lime"><span class="art-big-word">QUICK<br>PLAY</span><span class="art-sticker">GO<br>GO<br>GO!</span><span class="art-shape shape-circle"></span><span class="art-shape shape-square"></span></div>
+          <div class="game-card-info"><div><h3>Quick Play</h3><p>Small games. Instant chaos.</p></div><span class="card-arrow">↗</span></div>
+        </article>
+        <article class="game-card" data-category="skill" data-search="skill check reaction timing reflex challenge">
+          <div class="game-card-top"><span class="game-number">SP / 002</span><span class="status-pill"><span></span> IN THE WORKS</span></div>
+          <div class="game-art art-purple"><span class="target target-one"></span><span class="target target-two"></span><span class="target target-three"></span><span class="art-side-label">TEST YOUR REFLEXES</span><span class="art-center-label">SKILL<br>CHECK</span></div>
+          <div class="game-card-info"><div><h3>Skill Check</h3><p>Reflexes, timing, precision.</p></div><span class="card-arrow">↗</span></div>
+        </article>
+        <article class="game-card" data-category="brain" data-search="brain benders puzzles logic thinking">
+          <div class="game-card-top"><span class="game-number">SP / 003</span><span class="status-pill"><span></span> IN THE WORKS</span></div>
+          <div class="game-art art-orange"><span class="brain-symbol">?</span><span class="brain-label">BRAIN<br>BENDERS</span><span class="brain-mini">THINK<br>FAST.</span><span class="brain-sun">✳</span></div>
+          <div class="game-card-info"><div><h3>Brain Benders</h3><p>Make your brain do a backflip.</p></div><span class="card-arrow">↗</span></div>
+        </article>
+      </div>
+      <p class="no-results" id="no-results" hidden>No matches yet. Try a different search.</p>
+      <div class="coming-soon"><span class="coming-icon">+</span><div><strong>More games are on the way.</strong><p>We're building a library of fun, reliable games that work well on school Chromebooks.</p></div><span class="coming-count">NEXT UP <b>→</b></span></div>
+    </section>
+
+    <section class="lower-sections section-wrap">
+      <article class="info-panel guides-panel" id="guides">
+        <div class="panel-top"><span class="eyebrow">02 / THE TOOLBOX</span><span class="panel-icon">↗</span></div>
+        <div class="panel-illustration guide-illustration"><span class="guide-card card-a">HOW TO<br>GET BETTER</span><span class="guide-card card-b">TIP #01<br>KEEP GOING</span><span class="guide-star">✳</span></div>
+        <h2>Play smarter.<br><span class="lime-text">Not harder.</span></h2>
+        <p>Helpful guides, game tips, and little discoveries that make your next session even better.</p>
+        <a class="panel-link" href="#guides">Guides are coming together <span>→</span></a>
+      </article>
+      <article class="info-panel school-panel" id="school-hub">
+        <div class="panel-top"><span class="eyebrow">03 / THE SCHOOL HUB</span><span class="school-label">BETA IDEA</span></div>
+        <div class="school-heading-icon">▦</div>
+        <h2>School stuff.<br><span class="lime-text">Sorted.</span></h2>
+        <p>A home for cycle days, Unified Arts, useful links, and the school info you always need at the worst possible moment.</p>
+        <div class="school-preview"><div><span class="preview-label">CYCLE DAY</span><strong>—</strong></div><div><span class="preview-label">NEXT UA</span><strong>—</strong></div><div><span class="preview-label">DATE</span><strong id="today-date">TODAY</strong></div></div>
+        <p class="preview-note">School schedule details can be set up once the layout is ready.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home"><img class="brand-mark" src="https://raw.githubusercontent.com/cool-person47255/game-website/main/Screenshot%202026-10-20%203.55.44%20PM.png" alt=""><span>SPARK</span><span class="brand-period">.</span></a>
+    <p>GOOD THINGS START WITH A SPARK.</p>
+    <a class="back-top" href="#home">BACK TO TOP ↑</a>
+    <span class="footer-copy">© <span id="year">2026</span> SPARK · A WORK IN PROGRESS</span>
+  </footer>
+</body>
+</html>

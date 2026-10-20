@@ -1,6 +1,92 @@
 (() => {
   "use strict";
 
+  const sidebarToggle = document.querySelector("#sidebar-toggle");
+  const sidebar = document.querySelector("#site-sidebar");
+  const storage = {
+    get(key, fallback) { try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; } },
+    set(key, value) { try { localStorage.setItem(key, value); } catch {} }
+  };
+  const isMobile = () => window.matchMedia("(max-width: 760px)").matches;
+  function applySidebarState(state) {
+    document.body.classList.toggle("sidebar-collapsed", state === "collapsed" && !isMobile());
+    document.body.classList.toggle("sidebar-mobile-expanded", state === "expanded" && isMobile());
+    if (sidebarToggle) {
+      sidebarToggle.setAttribute("aria-expanded", String(state === "expanded"));
+      sidebarToggle.setAttribute("aria-label", state === "expanded" ? "Collapse sidebar" : "Expand sidebar");
+      sidebarToggle.title = state === "expanded" ? "Collapse sidebar" : "Expand sidebar";
+      const glyph = sidebarToggle.querySelector(".toggle-glyph");
+      if (glyph) glyph.textContent = state === "expanded" ? "‹" : "›";
+    }
+  }
+  let sidebarState = storage.get("spark-sidebar", "expanded");
+  applySidebarState(sidebarState);
+  sidebarToggle?.addEventListener("click", () => {
+    sidebarState = sidebarState === "expanded" ? "collapsed" : "expanded";
+    storage.set("spark-sidebar", sidebarState);
+    applySidebarState(sidebarState);
+  });
+  window.addEventListener("resize", () => applySidebarState(sidebarState));
+
+  const savedAccent = storage.get("spark-accent", "#C7FF00");
+  document.documentElement.style.setProperty("--lime", savedAccent);
+  document.querySelectorAll("[data-accent]").forEach((button) => {
+    const selected = button.dataset.accent === savedAccent;
+    button.classList.toggle("selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+    button.addEventListener("click", () => {
+      const color = button.dataset.accent;
+      document.documentElement.style.setProperty("--lime", color);
+      storage.set("spark-accent", color);
+      document.querySelectorAll("[data-accent]").forEach((other) => {
+        const active = other === button;
+        other.classList.toggle("selected", active);
+        other.setAttribute("aria-pressed", String(active));
+      });
+    });
+  });
+  const savedTheme = storage.get("spark-theme", "dark");
+  document.body.classList.toggle("theme-light", savedTheme === "light");
+  document.querySelectorAll("[data-theme]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.theme === savedTheme));
+    button.addEventListener("click", () => {
+      const theme = button.dataset.theme;
+      storage.set("spark-theme", theme);
+      document.body.classList.toggle("theme-light", theme === "light");
+      document.querySelectorAll("[data-theme]").forEach((other) => other.setAttribute("aria-pressed", String(other === button)));
+    });
+  });
+  const savedSidebarDefault = storage.get("spark-sidebar-default", "expanded");
+  document.querySelectorAll("[data-sidebar-default]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.sidebarDefault === savedSidebarDefault));
+    button.addEventListener("click", () => {
+      const preference = button.dataset.sidebarDefault;
+      storage.set("spark-sidebar-default", preference);
+      sidebarState = preference;
+      storage.set("spark-sidebar", preference);
+      applySidebarState(preference);
+      document.querySelectorAll("[data-sidebar-default]").forEach((other) => other.setAttribute("aria-pressed", String(other === button)));
+    });
+  });
+  const reducedMotionToggle = document.querySelector("#reduced-motion-setting");
+  const savedReducedMotion = storage.get("spark-reduced-motion", "false") === "true";
+  if (reducedMotionToggle) {
+    reducedMotionToggle.checked = savedReducedMotion;
+    document.body.classList.toggle("user-reduced-motion", savedReducedMotion);
+    reducedMotionToggle.addEventListener("change", () => {
+      storage.set("spark-reduced-motion", String(reducedMotionToggle.checked));
+      document.body.classList.toggle("user-reduced-motion", reducedMotionToggle.checked);
+    });
+  }
+  document.querySelectorAll(".site-sidebar .nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isMobile()) {
+        sidebarState = storage.get("spark-sidebar-default", "expanded");
+        applySidebarState(sidebarState);
+      }
+    });
+  });
+
   const menuToggle = document.querySelector("#menu-toggle");
   const mainNav = document.querySelector("#main-nav");
 

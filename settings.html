@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111210">
+  <meta name="description" content="Customize your SPARK experience.">
+  <title>Settings — SPARK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="settings-page">
+<a class="skip-link" href="#main">Skip to content</a>
+  <aside class="site-sidebar" id="site-sidebar">
+    <a class="brand" href="index.html" aria-label="SPARK home">
+      <img class="brand-mark" src="https://raw.githubusercontent.com/cool-person47255/game-website/main/Screenshot%202026-10-20%203.55.44%20PM.png" alt="">
+      <span class="brand-word">SPARK<span class="brand-period">.</span></span>
+    </a>
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-expanded="true" aria-controls="main-nav" aria-label="Collapse sidebar" title="Collapse sidebar"><span class="toggle-glyph">‹</span></button>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a class="nav-link " href="index.html" aria-label="Home" title="Home"><span class="nav-icon" aria-hidden="true">⌂</span><span class="nav-label">Home</span></a>
+      <a class="nav-link " href="games.html" aria-label="Arcade" title="Arcade"><span class="nav-icon" aria-hidden="true">▦</span><span class="nav-label">Arcade</span></a>
+      <a class="nav-link " href="guides.html" aria-label="Guides" title="Guides"><span class="nav-icon" aria-hidden="true">▤</span><span class="nav-label">Guides</span></a>
+      <a class="nav-link " href="school-hub.html" aria-label="School Hub" title="School Hub"><span class="nav-icon" aria-hidden="true">▣</span><span class="nav-label">School Hub</span></a>
+      <a class="nav-link active" href="settings.html" aria-label="Settings" title="Settings"><span class="nav-icon" aria-hidden="true">⚙</span><span class="nav-label">Settings</span></a>
+    </nav>
+    <a class="sidebar-arcade-cta" href="games.html"><span class="nav-icon" aria-hidden="true">↗</span><span class="nav-label">Find a game</span></a>
+  </aside>
+<main id="main" class="page-main section-wrap settings-main">
+  <section class="page-heading">
+    <div class="eyebrow"><span class="live-dot"></span> SPARK / PREFERENCES</div>
+    <h1>MAKE IT <span class="lime-text">YOURS.</span></h1>
+    <p>Personalize how SPARK looks and feels on this device.</p>
+  </section>
+  <section class="settings-list" aria-label="Settings">
+    <div class="settings-row">
+      <div><h2>Accent color</h2><p>Choose the highlight color used around SPARK.</p></div>
+      <div class="setting-control accent-options">
+        <button class="accent-choice selected" data-accent="#C7FF00" aria-pressed="true"><span style="background:#C7FF00"></span>Lime</button>
+        <button class="accent-choice" data-accent="#B9A3FF" aria-pressed="false"><span style="background:#B9A3FF"></span>Violet</button>
+        <button class="accent-choice" data-accent="#FF8A4C" aria-pressed="false"><span style="background:#FF8A4C"></span>Orange</button>
+        <button class="accent-choice" data-accent="#66E5D3" aria-pressed="false"><span style="background:#66E5D3"></span>Mint</button>
+      </div>
+    </div>
+    <div class="settings-row">
+      <div><h2>Appearance</h2><p>Choose the page background style.</p></div>
+      <div class="setting-control"><div class="setting-segment"><button data-theme="dark" aria-pressed="true">Dark</button><button data-theme="light" aria-pressed="false">Light</button></div></div>
+    </div>
+    <div class="settings-row">
+      <div><h2>Sidebar</h2><p>Choose how the navigation opens by default.</p></div>
+      <div class="setting-control"><div class="setting-segment"><button data-sidebar-default="expanded" aria-pressed="true">Expanded</button><button data-sidebar-default="collapsed" aria-pressed="false">Collapsed</button></div></div>
+    </div>
+    <div class="settings-row">
+      <div><h2>Animations</h2><p>Reduce movement and transitions where possible.</p></div>
+      <label class="switch-control"><input type="checkbox" id="reduced-motion-setting"><span>Reduce motion</span></label>
+    </div>
+    <p class="settings-status" id="settings-status" role="status">Settings save automatically on this device.</p>
+  </section>
+</main>
+<footer class="site-footer"><p>GOOD THINGS START WITH A SPARK.</p><span class="footer-copy">© <span id="year">2026</span> SPARK · A WORK IN PROGRESS</span></footer>
+</body>
+</html>

@@ -60,11 +60,13 @@
   const today = new Date();
   const dateElement = document.querySelector("#today-date");
   const yearElement = document.querySelector("#year");
+  const hubDateElement = document.querySelector("#hub-date");
   if (dateElement) {
     dateElement.textContent = today.toLocaleDateString(undefined, {
       month: "short",
       day: "numeric"
     }).toUpperCase();
   }
+  if (hubDateElement) hubDateElement.textContent = today.toLocaleDateString(undefined, { month: "short", day: "numeric" }).toUpperCase();
   if (yearElement) yearElement.textContent = String(today.getFullYear());
 })();

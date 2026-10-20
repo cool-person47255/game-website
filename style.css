@@ -493,3 +493,46 @@ body > footer.site-footer {
   }
   .settings-page .settings-row { grid-template-columns: 1fr; }
 }
+
+
+/* Final polish for the launchpad and settings page */
+.home-page { overflow-x: hidden; }
+.home-page .launchpad-main { position: relative; }
+.home-page .launchpad-heading h1,
+.settings-page .page-heading h1 { color: var(--paper); }
+.home-page .launchpad-heading h1 .lime-text,
+.settings-page .page-heading h1 .lime-text { color: var(--lime); }
+.home-page .launchpad-heading p,
+.settings-page .page-heading p { color: #b9bbb1; }
+.home-page .launch-card { text-decoration: none; }
+.home-page .launch-card:not(.launch-card-featured) { color: var(--paper); }
+.home-page .launch-card:not(.launch-card-featured) strong { color: var(--paper); }
+.home-page .launch-card:not(.launch-card-featured) small { color: var(--muted); }
+.home-page .launch-card-featured strong,
+.home-page .launch-card-featured .launch-card-number { color: var(--ink); }
+.home-page .site-footer { margin-top: 0; }
+.settings-page { min-height: 100vh; }
+.settings-page .settings-main { min-height: calc(100vh - 100px); }
+.settings-page .settings-row { min-width: 0; }
+.settings-page .settings-row > div:first-child { min-width: 0; }
+.settings-page .settings-row p { max-width: 480px; }
+.settings-page .setting-control { min-width: 0; }
+.settings-page .accent-choice,
+.settings-page .setting-segment button { white-space: nowrap; }
+.settings-page .site-footer { display: grid; }
+body.theme-light .site-sidebar .nav-link.active { background: color-mix(in srgb, var(--lime) 18%, transparent); border-color: color-mix(in srgb, var(--lime) 48%, transparent); color: #303b00; }
+body.theme-light .sidebar-toggle { background:#fff; color:#303b00; border-color:var(--line); }
+body.theme-light .sidebar-arcade-cta { color:#111210; }
+body.theme-light .launchpad-heading p,
+body.theme-light .settings-page .page-heading p { color:var(--muted); }
+body.theme-light .launchpad-note { color:var(--muted); }
+@media (max-width: 760px) {
+  .home-page .launchpad-main { min-height: auto; padding-bottom: 35px; }
+  .home-page .launchpad-heading h1 { font-size: clamp(27px, 8vw, 42px); letter-spacing: -1.5px; overflow-wrap: anywhere; }
+  .home-page .launch-card-featured { min-height: 220px; }
+  .settings-page .settings-main { padding-top: 28px; }
+  .settings-page .settings-row { align-items: start; }
+  .settings-page .setting-control { justify-content: flex-start; }
+  .settings-page .accent-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .settings-page .accent-choice { justify-content:flex-start; }
+}
